@@ -1,0 +1,173 @@
+/* Importing local fonts */
+@import url("./fonts.css");
+
+/* Custom variables */
+:root {
+  /* Colors */
+  --primary-color: #f09d20;
+  --hover-color: #cf5f10;
+  --light-color: #fef8ec;
+  --success-color: #4ddb98;
+  --danger-color: #f57779;
+  --dark-color: #421406;
+  --white-color: #ffffff;
+  --black-color: #000000;
+
+  /* fonts */
+  --primary-font: "Poppins", sans-serif;
+
+  /* transitions */
+  --trans-3s: all 0.3s ease;
+  --trans-5s: all 0.5s ease;
+
+  /* spacings */
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 1rem; /* 16px */
+  --spacing-4: 1.5rem; /* 24px */
+  --spacing-5: 2rem; /* 32px */
+  --spacing-6: 3rem; /* 48px */
+  --spacing-7: 6rem; /* 96px */
+
+  /* box-shadow */
+  --shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+
+  /* typography size */
+  --ty-size-h1: 2.125rem; /* 34px */
+  --ty-size-h2: 1.875rem; /* 30px */
+  --ty-size-h3: 1.5rem; /* 20px */
+  --ty-size-p: 1rem; /* 16px */
+}
+
+/* Resets */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--primary-font);
+}
+
+body {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+/* header style */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--spacing-7) var(--spacing-4) 0 var(--spacing-4);
+}
+header .title {
+  font-size: var(--ty-size-h1);
+}
+
+/* main style */
+.app {
+  width: 90%;
+  max-width: 600px;
+  margin:  var(--spacing-6) auto 0 auto;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  padding: var(--spacing-5);
+}
+
+.quiz-topic {
+  font-size: var(--ty-size-h2);
+  font-weight: 700;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 5px;
+}
+
+.quiz {
+  padding: 20px 0 5px 0 
+}
+
+.quiz h3 {
+  font-size: var(--ty-size-h3);
+}
+
+.answer-btn {
+  padding-bottom: 5px;
+}
+.btn {
+  font-size: var(--ty-size-p);
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  font-weight: 400;
+  width: 100%;
+  border: 1px solid var(--primary-color);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--hover-color);
+  color: var(--light-color);
+  transition: var(--trans-3s);
+}
+
+.btn:active {
+  background-color: var(--primary-color);
+}
+
+.next-btn {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  font-size: var(--ty-size-p);
+  font-weight: 400;
+  width: 150px;
+  border: 0;
+  padding: 10px;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none; /* flex when active */
+  justify-content: center;
+  align-items: center;
+}
+.next-btn:hover {
+  background-color: var(--hover-color);
+  transition: var(--trans-3s);
+}
+
+
+/* Media queries - From Desktop to Mobile */
+/* Largest devices (1400px and down) */
+@media only screen and (max-width: 87.5rem) {
+}
+
+/* Extra Large devices (1200px and down) */
+@media only screen and (max-width: 75rem) {
+}
+
+/* Large devices (992px and down) */
+@media only screen and (max-width: 62rem) {
+}
+
+/* Medium devices (768px and down) */
+@media only screen and (max-width: 48rem) {
+  :root {
+    --ty-size-h2: 1.5rem; /* 24px */
+    --ty-size-h3: 1.25rem; /* 20px */
+  }
+
+}
+
+/* Small devices (576px and down) */
+@media only screen and (max-width: 36rem) {
+  :root {
+    --ty-size-h1: 1.5rem; /* 24px */
+    --ty-size-h2: 1.125rem; /* 18px */
+    --ty-size-h3: 1.063rem; /* 17px */
+  }
+}
