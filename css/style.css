@@ -89,7 +89,7 @@ header .title {
   padding: 20px 0 5px 0 
 }
 
-.quiz h3 {
+.quiz .question {
   font-size: var(--ty-size-h3);
 }
 
@@ -110,10 +110,14 @@ header .title {
   cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover:not([disabled]) {
   background-color: var(--hover-color);
   color: var(--light-color);
   transition: var(--trans-3s);
+}
+
+.btn:disabled {
+  cursor: no-drop;
 }
 
 .btn:active {
@@ -140,6 +144,18 @@ header .title {
   transition: var(--trans-3s);
 }
 
+.correct {
+  background-color: var(--success-color);
+  color: var(--light-color);
+  border: 1px solid var(--success-color);
+}
+
+.incorrect {
+  background-color: var(--danger-color);
+  color: var(--light-color);
+  border: 1px solid var(--danger-color);
+
+}
 
 /* Media queries - From Desktop to Mobile */
 /* Largest devices (1400px and down) */
