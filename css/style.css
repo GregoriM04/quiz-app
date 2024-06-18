@@ -58,13 +58,14 @@ body {
 }
 
 /* header style */
-header {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: var(--spacing-7) var(--spacing-4) 0 var(--spacing-4);
 }
-header .title {
+
+.header .title {
   font-size: var(--ty-size-h1);
 }
 
@@ -96,6 +97,7 @@ header .title {
 .answer-btn {
   padding-bottom: 5px;
 }
+
 .btn {
   font-size: var(--ty-size-p);
   background-color: var(--light-color);
@@ -139,11 +141,13 @@ header .title {
   justify-content: center;
   align-items: center;
 }
+
 .next-btn:hover {
   background-color: var(--hover-color);
   transition: var(--trans-3s);
 }
 
+/* feeback selection */
 .correct {
   background-color: var(--success-color);
   color: var(--light-color);

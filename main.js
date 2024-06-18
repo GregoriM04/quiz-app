@@ -1,7 +1,8 @@
 //  Quiz questions
 const generalQuestions = [
   {
-    question: "Which is the most spoken language in the world?",
+    question:
+      "In the &quot;Call Of Duty: Zombies&quot; map &quot;Moon&quot;, there is a secondary called the QED. What does QED stand for?",
     answers: [
       { option: "Portuguese", correct: false },
       { option: "Spanish", correct: false },
