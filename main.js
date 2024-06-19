@@ -2,7 +2,9 @@
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-btn");
 const nextButton = document.getElementById("next-btn");
+const newQuizButton = document.getElementById("newquiz-btn");
 let nextButtonIcon = document.createElement("ion-icon");
+let newQuizButtonIcon = document.createElement("ion-icon");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -48,6 +50,7 @@ function startQuiz() {
   nextButton.innerHTML = "Next";
   nextButtonIcon.setAttribute("name", "chevron-forward-outline");
   nextButton.appendChild(nextButtonIcon);
+  newQuizButton.style.display = "none";
   showQuestion();
 }
 
@@ -127,10 +130,17 @@ function showScore() {
   resetState();
 
   questionElement.innerHTML = `You get ${score} out of ${questionsFetched.length}!`;
-  nextButton.innerHTML = "Play Again";
+  nextButton.innerHTML = "Replay";
   nextButtonIcon.setAttribute("name", "play");
   nextButton.appendChild(nextButtonIcon);
   nextButton.style.display = "flex";
+
+  // reload the quiz option
+  newQuizButton.style.display = "flex";
+
+  newQuizButton.addEventListener("click", () => {
+    location.reload();
+  })
 }
 
 function handleNextButton() {
