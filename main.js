@@ -7,6 +7,18 @@ let nextButtonIcon = document.createElement("ion-icon");
 let currentQuestionIndex = 0;
 let score = 0;
 
+// Spinner
+window.addEventListener("load", () => {
+  // add the hidden class once the page loads
+  const loader = document.querySelector(".loader");
+  loader.classList.add("loader-hidden");
+
+  // remove the tag once the page loads
+  loader.addEventListener("transitionend", () => {
+    loader.remove();
+  });
+});
+
 // fetching questions and answers
 const questionsFetched = [];
 (async function () {
