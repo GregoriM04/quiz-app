@@ -34,8 +34,8 @@
 
   /* typography size */
   --ty-size-h1: 2.125rem; /* 34px */
-  --ty-size-h2: 1.875rem; /* 30px */
-  --ty-size-h3: 1.5rem; /* 20px */
+  --ty-size-h2: 1.6rem; /* 25.6px */
+  --ty-size-h3: 1.25rem; /* 20px */
   --ty-size-p: 1rem; /* 16px */
 }
 
@@ -200,8 +200,18 @@ body {
 }
 
 /* Media queries - From Desktop to Mobile */
-/* Largest devices (1400px and down) */
+/* Largest devices (1600px and down) */
+@media only screen and (max-width: 100rem) {
+  .header {
+    margin: var(--spacing-6) var(--spacing-4) 0 var(--spacing-4);
+  }
+}
+
+/* Exxtra Large devices (1400px and down) */
 @media only screen and (max-width: 87.5rem) {
+  .header {
+    margin: var(--spacing-5) var(--spacing-4) 0 var(--spacing-4);
+  }
 }
 
 /* Extra Large devices (1200px and down) */
@@ -210,6 +220,9 @@ body {
 
 /* Large devices (992px and down) */
 @media only screen and (max-width: 62rem) {
+  .app {
+    margin: var(--spacing-5) auto 0 auto;
+  }
 }
 
 /* Medium devices (768px and down) */
@@ -223,8 +236,8 @@ body {
 /* Small devices (576px and down) */
 @media only screen and (max-width: 36rem) {
   :root {
-    --ty-size-h1: 1.5rem; /* 24px */
-    --ty-size-h2: 1.125rem; /* 18px */
-    --ty-size-h3: 1.063rem; /* 17px */
+    --ty-size-h1: 1.8rem; /* 28.8px */
+    --ty-size-h2: 1.25rem; /* 20px */
+    --ty-size-h3: 1rem; /* 16px */
   }
 }
