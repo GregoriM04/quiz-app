@@ -11,14 +11,16 @@ let score = 0;
 
 // Spinner
 window.addEventListener("load", () => {
-  // add the hidden class once the page loads
-  const loader = document.querySelector(".loader");
-  loader.classList.add("loader-hidden");
+  setTimeout(() => {
+    // add the hidden class once the page loads
+    const loader = document.querySelector(".loader");
+    loader.classList.add("loader-hidden");
 
-  // remove the tag once the page loads
-  loader.addEventListener("transitionend", () => {
-    loader.remove();
-  });
+    // remove the tag once the page loads
+    loader.addEventListener("transitionend", () => {
+      loader.remove();
+    });
+  }, 600);
 });
 
 // fetching questions and answers
@@ -140,7 +142,7 @@ function showScore() {
 
   newQuizButton.addEventListener("click", () => {
     location.reload();
-  })
+  });
 }
 
 function handleNextButton() {
