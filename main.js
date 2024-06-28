@@ -9,7 +9,7 @@ let newQuizButtonIcon = document.createElement("ion-icon");
 let currentQuestionIndex = 0;
 let score = 0;
 
-// Spinner
+// spinner
 window.addEventListener("load", () => {
   setTimeout(() => {
     // add the hidden class once the page loads
@@ -70,20 +70,29 @@ function showQuestion() {
   let correctAnswer = questionsFetched[currentQuestionIndex].correct_answer;
   let otherAnswers = questionsFetched[currentQuestionIndex].incorrect_answers;
 
+  // function to decode any HTML input
+  function decodeHTML(html) {
+    let txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.innerText;
+  }
+  let correctAnswerDecoded = decodeHTML(correctAnswer);
+
+  // storing all answers together
   allAnswers = otherAnswers.slice();
-  allAnswers.push(correctAnswer);
+  allAnswers.push(correctAnswerDecoded);
 
   // function to shuffle answers order
   function shuffle(array) {
     let currentIndex = array.length;
 
-    // While there remain elements to shuffle...
+    // while there remain elements to shuffle...
     while (currentIndex != 0) {
-      // Pick a remaining element...
+      // pick a remaining element...
       let randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
 
-      // And swap it with the current element.
+      // and swap it with the current element.
       [array[currentIndex], array[randomIndex]] = [
         array[randomIndex],
         array[currentIndex],
@@ -102,7 +111,7 @@ function showQuestion() {
     button.addEventListener("click", (e) => {
       const selectedBtn = e.target;
 
-      if (selectedBtn.innerText === correctAnswer) {
+      if (selectedBtn.textContent === correctAnswerDecoded) {
         selectedBtn.classList.add("correct");
         score++;
       } else {
@@ -111,7 +120,7 @@ function showQuestion() {
 
       // look and display the correct answer when wrong is selected
       Array.from(answerButtons.children).forEach((button) => {
-        if (button.innerText === correctAnswer) {
+        if (button.textContent === correctAnswerDecoded) {
           button.classList.add("correct");
         }
         button.disabled = true;
